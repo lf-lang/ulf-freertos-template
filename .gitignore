@@ -1,5 +1,11 @@
 src-gen/
 build/
+build-*/
 sdkconfig
 .vscode/
 .idea
+CMakeUserPresets.json
+*.uf2
+*.elf
+*.bin
+*.hex
