@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "pico",
+      "displayName": "Raspberry Pi Pico (RP2040)",
+      "description": "Build for Raspberry Pi Pico platform using RP2040 microcontroller",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "PLATFORM_TARGET": "pico",
+        "PICO_BOARD": "pico_w",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "pico-debug",
+      "displayName": "Raspberry Pi Pico (RP2040) - Debug",
+      "description": "Build for Raspberry Pi Pico platform with debug symbols",
+      "binaryDir": "${sourceDir}/build-debug",
+      "cacheVariables": {
+        "PLATFORM_TARGET": "pico",
+        "PICO_BOARD": "pico_w",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "pico",
+      "configurePreset": "pico",
+      "displayName": "Build Pico Release",
+      "description": "Build the project for Pico in Release mode"
+    },
+    {
+      "name": "pico-debug",
+      "configurePreset": "pico-debug",
+      "displayName": "Build Pico Debug",
+      "description": "Build the project for Pico in Debug mode"
+    }
+  ]
+}
