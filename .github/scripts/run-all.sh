@@ -12,7 +12,7 @@ build_pico_test() {
       -DLF_MAIN=$program \
       -DPLATFORM_TARGET=$target \
       -DPICO_BOARD=$board
-    cmake --build build -j $(nproc)
+    cmake --build build -j "$(nproc)"
     rm -rf build src-gen
 }
 
@@ -26,7 +26,7 @@ for lf_file in src/*.lf; do
     fi
 done
 
-echo "Found examples: ${EXAMPLES[@]}"
+echo "Found examples: " "${EXAMPLES[@]}"
 
 echo "Testing Pico platform..."
 
@@ -50,4 +50,3 @@ echo ""
 echo "========================================"
 echo "All tests completed successfully!"
 echo "========================================"
-

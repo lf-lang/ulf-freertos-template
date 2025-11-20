@@ -16,11 +16,11 @@ jobs:
 
       - name: Checkout reactor-uc
         uses: ./.github/actions/reactor-uc
-          
+
       - name: Install LFC dependencies
         uses: ./reactor-uc/.github/actions/lingua-franca
   ci:
-    name: Run tests 
+    name: Run tests
     needs: setup
     runs-on: ubuntu-24.04
     env:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Checkout reactor-uc
         uses: ./.github/actions/reactor-uc
-          
+
       - name: Install LFC dependencies
         uses: ./reactor-uc/.github/actions/lingua-franca
 
