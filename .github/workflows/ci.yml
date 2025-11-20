@@ -1,0 +1,54 @@
+name: "CI"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  # Setup job to cache dependencies for faster CI runs
+  setup:
+    name: Setup dependencies
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout reactor-uc
+        uses: ./.github/actions/reactor-uc
+          
+      - name: Install LFC dependencies
+        uses: ./reactor-uc/.github/actions/lingua-franca
+  ci:
+    name: Run tests 
+    needs: setup
+    runs-on: ubuntu-24.04
+    env:
+      REACTOR_UC_PATH: ${{ github.workspace }}/reactor-uc
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: "recursive"
+
+      - name: Checkout reactor-uc
+        uses: ./.github/actions/reactor-uc
+          
+      - name: Install LFC dependencies
+        uses: ./reactor-uc/.github/actions/lingua-franca
+
+      - name: Install Pico dependencies
+        uses: ./reactor-uc/.github/actions/pico
+
+      - name: Initialize Pico SDK submodules
+        run: |
+          if [ -d "/opt/pico-sdk" ]; then
+            cd /opt/pico-sdk
+            git submodule update --init --recursive
+          elif [ -d "$PICO_SDK_PATH" ]; then
+            cd $PICO_SDK_PATH
+            git submodule update --init --recursive
+          fi
+
+      - name: Run tests
+        run: ./.github/scripts/run-all.sh
