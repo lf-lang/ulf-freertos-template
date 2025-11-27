@@ -31,7 +31,7 @@ endif()
 
 message(STATUS "Building for platform: ${PLATFORM_TARGET}")
 
-# Include platform-specific configuration This will set up SDK initialization,
+# Include platform-specific configuration. This will set up SDK initialization,
 # toolchain, and platform-specific variables
 include("${PLATFORM_DIR}/platform.cmake")
 
@@ -73,7 +73,7 @@ lf_build_generated_code(${LF_MAIN_TARGET}
 # ============================================================================
 # Platform-Specific Target Configuration
 # ============================================================================
-# Call the platform-specific configuration function This handles linking
+# Call the platform-specific configuration function. This handles linking
 # platform libraries, setting compile options, etc.
 if(COMMAND platform_configure_target)
   platform_configure_target(${LF_MAIN_TARGET})

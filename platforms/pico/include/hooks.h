@@ -17,7 +17,7 @@ __attribute__((weak)) void vApplicationMallocFailedHook(void) {
   }
 }
 
-__attribute__((weak)) void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName) {
+__attribute__((weak)) void vApplicationStackOverflowHook(TaskHandle_t pxTask, char* pcTaskName) {
   (void)pcTaskName;
   (void)pxTask;
 

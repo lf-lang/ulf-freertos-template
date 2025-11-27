@@ -39,8 +39,8 @@ endif()
 # Initialize Pico SDK
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
-# Check for FreeRTOS kernel path First check if FREERTOS_KERNEL_PATH is already
-# set as a CMake variable
+# Check for FreeRTOS kernel path, firstly check if FREERTOS_KERNEL_PATH is
+# already set as a CMake variable
 if(NOT DEFINED FREERTOS_KERNEL_PATH)
   if(DEFINED ENV{FREERTOS_KERNEL_PATH})
     set(FREERTOS_KERNEL_PATH $ENV{FREERTOS_KERNEL_PATH})
@@ -95,7 +95,7 @@ message(STATUS "Using FreeRTOS config from: ${FREERTOS_CONFIG_PATH}")
 # Initialize Pico SDK (must be done after FreeRTOS setup but before project())
 pico_sdk_init()
 
-# Platform-specific function to configure the target executable This should be
+# Platform-specific function to configure the target executable. This should be
 # called after the target is created
 function(platform_configure_target TARGET_NAME)
   message(STATUS "Configuring ${TARGET_NAME} for Pico platform")
