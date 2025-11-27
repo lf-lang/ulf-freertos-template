@@ -53,11 +53,11 @@ lf-freertos-uc-template/
 
 To add support for a new platform:
 
-1. Create a new directory under `platforms/<platform-name>/`
-2. Add `platform.cmake` with platform-specific configuration
-3. Add `FreeRTOSConfig.h` tuned for your platform
-4. (Optional) Implement FreeRTOS hooks if needed in `platforms/<platform-name>/<platform-name>_freertos_hooks.c`
-5. Create a `README.md` with setup instructions
+1. Create a new directory under `platforms/<platform-name>/`;
+1. Add `platform.cmake` with platform-specific configuration;
+1. Add `FreeRTOSConfig.h` tuned for your platform;
+1. (Optional) Implement FreeRTOS hooks if needed in `platforms/<platform-name>/<platform-name>_freertos_hooks.c`;
+1. Create a `README.md` with setup instructions.
 
 ## Resources
 
