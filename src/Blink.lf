@@ -1,9 +1,8 @@
-target uC {
-  platform: freertos
-}
+target uC
 
 import Led from "./lib/Led.lf"
 
+@platform("freertos")
 main reactor {
   timer t1(0, 100 msec)
   led = new Led()

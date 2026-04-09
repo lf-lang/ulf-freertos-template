@@ -1,12 +1,11 @@
-target uC {
-  timeout: 10 sec,
-  platform: freertos
-}
+target uC
 
 preamble {=
   #include "reactor-uc/reactor-uc.h"
 =}
 
+@platform("freertos")
+@timeout(10s)
 main reactor {
   timer t1(0, 1 sec)
 
