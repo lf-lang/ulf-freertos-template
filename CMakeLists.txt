@@ -66,7 +66,7 @@ include($ENV{REACTOR_UC_PATH}/cmake/lfc.cmake)
 
 # Lingua Franca setup
 lf_setup()
-lf_run_lfc(${CMAKE_CURRENT_SOURCE_DIR}/src ${LF_MAIN})
+lf_run_lfc(OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ FILES src/${LF_MAIN}.lf)
 lf_build_generated_code(${LF_MAIN_TARGET}
                         ${CMAKE_CURRENT_SOURCE_DIR}/src-gen/${LF_MAIN})
 
