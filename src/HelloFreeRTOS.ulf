@@ -1,5 +1,3 @@
-target uC
-
 @platform("freertos")
 @timeout(10s)
 main reactor {
