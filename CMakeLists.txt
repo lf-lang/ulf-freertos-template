@@ -50,7 +50,7 @@ if(NOT DEFINED LOG_LEVEL)
 endif()
 
 # ============================================================================
-# Lingua Franca Configuration
+# micro-LF Configuration
 # ============================================================================
 
 set(LF_MAIN_TARGET ${LF_MAIN})
@@ -64,7 +64,7 @@ endif()
 
 include($ENV{REACTOR_UC_PATH}/cmake/ulfc.cmake)
 
-# Lingua Franca setup
+# micro-LF setup
 lf_setup()
 lf_run_lfc(OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ FILES src/${LF_MAIN}.ulf)
 lf_build_generated_code(${LF_MAIN_TARGET}
